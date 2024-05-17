@@ -1,30 +1,29 @@
-# Tuya User Interface #
+# TuyaUIUweb: Tuya WEBAPP User Interface #
 
 Dopo aver progettato il mese scorso un'interfaccia WEB per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget), poi ho elaborato anche una versione per TuyaCloud: _TuyaUIweb_. 
-Questa APP presenta tutti  i device Tuya, stanze e case, in una disposizione ad 'albero' dinamico, all'interno di un browser. Ogni nodo ha un popup che presenta i valori aggiornati delle proprietà del device. Per sicurezza, agisce solo in lettura: non altera i dati in Tuya Cloud in nessun modo.
+Questa webapp presenta tutti  i device Tuya, stanze e case, in una disposizione ad 'albero' dinamico, all'interno di un browser. Ogni nodo ha un popup che presenta i valori aggiornati delle proprietà del device. Per sicurezza, agisce solo in lettura: non altera i dati in Tuya Cloud in nessun modo.
 
 ### Prestazioni:
-In un solo colpo d'occhio si ha la situazione completa sotto controllo.
 
-In fase iniziale tutti i dati necessari sono letti da Tuya Cloud e viene costruita una struttura locale contenente TUTTE le informazioni. Il grafo ad albero di visualizzazione è costruito in base a queste informazioni.
+_In un solo colpo d'occhio si ha la situazione completa sotto controllo._
 
-Tutti i nodi (root. case, stanze e  device) sono rappresentati da icone (customizzabili), grigie quandi il device è disconnesso, Il colore del link indica il tipo di device: se blu è WiFi, se rosso usa un HUB (subdevice).
+In fase iniziale tutti i dati necessari sono letti da Tuya Cloud e viene costruita una struttura locale contenente TUTTE le informazioni. Il grafo ad albero di visualizzazione è costruito in base a queste informazioni.<br>
+Tutti i nodi (root, case, stanze e  device) sono rappresentati da icone (customizzabili), grigie quandi il device è disconnesso, Il colore del link indica il tipo di device: se blu è WiFi, se rosso usa un HUB (subdevice).
 
-L'aggiornamento dei dati  avviene in polling: sono letti dal Cloud con frequenza regolabile dall'utente, da 30s a alcuni minuti, e i popup (customizzabili) sono aggiornati subito.
-
+L'aggiornamento dei dati  avviene in polling: sono letti dal Cloud con frequenza regolabile dall'utente, da 30s a alcuni minuti, e i popup (customizzabili) sono aggiornati subito.<BR>
 Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in caso di aggiunte di nuovi device.
 
 ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/UIlook01.png?raw=true)
 
 ### Logging:
-E' possibile esportare su un file alcuni dati: l'utente deve specificare `home`, `device` e `status` (proprietà) per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno, esportato poi su file automaticamente o su comando utente.
-
+E' possibile esportare su un file alcuni dati: l'utente deve specificare `home`, `device` e `status` (proprietà) per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno, esportato poi su file automaticamente o su comando utente.<br>
 L'utente può scegliere tra due formati: `CVS` (indicato, per esempio, per spreadsheet tipo Excel) oppure `JSON` (per elaborazioni più complesse con programmi ad hoc) con pochissimi interventi di editing sui file.
 
-E' anche possibile su comando vedere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel log della console oppure può essere copiata con cut&paste in formato JSON.
+E' anche possibile su comando avere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel log della console oppure può essere copiata con cut&paste in formato JSON.
 
 
-### Note di implementazione:
+### Note di implementazione
+
 - La scelta della libreria di visualizzazione è caduta su [Vis-Network](https://visjs.github.io/vis-network/docs/network/) per la buona flessibilità unita a semplicità di uso.
 - Un primo problema è il protocollo di sicurezza CORS, implementato sui moderni browser. Una applicazione (anche in js, node-red, etc)  non ha questo problema, ma una APP che gira in un browser sì. E' necessario disabilitare CORS al memento del lancio del browser (vedi file goTuyaUI.bat). Vale solo per questa istanza, le altre resteranno protette.  
 - I file sono salvati nella dir `download`, con il nome fisso `tuyalog.cvs|json`, _assicurarsi che il S.O. non sovrascriva i file con lo stesso nome!_
@@ -39,7 +38,7 @@ _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri da
 
 ### Installazione
 1) Scaricare e dezippare il file `TuyaUIweb.1.x.zip`  in una dir (con le autorizzazioni richieste dal S.O.).
-2) Il file principale è tuyaui.html.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows). Per altri S.O. creare uno script analogo.
+2) Il file principale è `tuyaui.html`.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows). Per altri S.O. creare uno script analogo.
 3) Eseguire le operazioni di configurazione
 4) In fase di installazione e setup è utile la console (nel browser - strumenti per programmatori -, o menu  'ispeziona elemento') perchè lì vanno i messaggi di informazione e di errore di TuyaUIWEB.
 
@@ -51,6 +50,7 @@ Questa APP è per utenti non alle prime armi, pertanto è accettabile che la con
 - Aggiornare con i path del sistema ospite il file di lancio `goTuyaUI.bat`.
 
 ## Customizzazioni
+
 Il programma è OpenSorce, in HTML+Javascript, è abbastanza documentato e modulare. Quindi è possibile ogni intervento. 
 Due aree sono state privilegiate e poste per semplicità in un file separato con dettagliate istruzioni ed esempi:
 
