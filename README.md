@@ -1,7 +1,7 @@
 # Tuya User Interface #
 
-Dopo aver progettato il mese scorso un'interfaccia WEB per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget), poi ho elaborato anche una versione per TuyaCloud: TuyaUIweb. 
-Questa APP presenta tutti  i device Tuya, stanze e case, in una disposizione ad 'albero' dinamico, allinterno di un browser. Qgni nodo ha un popup che presenta i valori aggiornati delle proprietà del device. Per sicurezza, agisce solo in lettura: non altera i dati in Tuya Cloud in nessun modo.
+Dopo aver progettato il mese scorso un'interfaccia WEB per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget), poi ho elaborato anche una versione per TuyaCloud: _TuyaUIweb_. 
+Questa APP presenta tutti  i device Tuya, stanze e case, in una disposizione ad 'albero' dinamico, all'interno di un browser. Ogni nodo ha un popup che presenta i valori aggiornati delle proprietà del device. Per sicurezza, agisce solo in lettura: non altera i dati in Tuya Cloud in nessun modo.
 
 ### Prestazioni:
 In un solo colpo d'occhio si ha la situazione completa sotto controllo.
@@ -12,22 +12,20 @@ Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in 
 
 ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/UIlook01.png?raw=true)
 
-Logging:
-E' possibile esportare su un file alcuni dati: l'utente deve specificare home, device e proprietà per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno, esportato su file automaticamente o su comando utente,
+### Logging:
+E' possibile esportare su un file alcuni dati: l'utente deve specificare home, device e proprietà per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno, esportato poi su file automaticamente o su comando utente.
 L'utente può scegliere tra due formati: CVS (indicato, per esempio, per spreadsheet - Excel) oppure JSON (per elaborazioni più complesse con programmi ad hoc) con pochissimi interventi di editing sui file.
-E' anche possibile su comando vedere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere ersplorata a ogni livello nel log della console oppure può essere copiata in formato JSON.
+E' anche possibile su comando vedere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel log della console oppure può essere copiata con cut&paste in formato JSON.
 
 
-FIGURa
-
-Note di implementazione:
-- La scelta della libreria di visualizzazione è caduta su Vis-Network (https://visjs.github.io/vis-network/docs/network/) per la buone flessibilità unita a semplicità di uso.
+### Note di implementazione:
+- La scelta della libreria di visualizzazione è caduta su [Vis-Network](https://visjs.github.io/vis-network/docs/network/) per la buona flessibilità unita a semplicità di uso.
 - Un primo problema è il protocollo di sicurezza CORS, implementato sui moderni browser. Una applicazione (anche in js, node-red, etc)  non ha questo problema, ma una APP che gira in un browser sì. E' necessario disabilitare CORS al memento del lancio del browser (vedi file goTuyaUI.bat). 
 - I file sono salvati nella dir 'download', con il nome fisso 'tuyalog.cvs|json', assicurarsi che il S.O. non sovrascriva i file con lo stesso nome!
-- Tuya pone dei limiti alla frequenza degli accessi al cloud. TuyaUI ne tiene conto, e la fase iniziale (quando legge tutti i dati dal Cloud) è bloccante e non brevissima. Come anche in SmartLife.
-- Per ovviare aill'impossibilità di creare file da un pagina HTML, sempre per motivi di sicurezza, per l'export dei dati sono ricorso ad una libreria di logging su file (debugout.js). Per questo motivo il controllo sui file generati non è completo e sono necessari piccoli  interventi manuali.
+- Tuya pone dei limiti alla frequenza degli accessi al cloud. _TuyaUIweb_ ne tiene conto, e la fase iniziale (quando legge tutti i dati dal Cloud) è bloccante e non brevissima. Come anche in SmartLife.
+- Per ovviare aill'impossibilità di creare file da una pagina HTML, sempre per motivi di sicurezza, per l'export dei dati sono ricorso ad una libreria di logging su file (debugout.js). Per questo motivo il controllo sui file generati non è completo e sono necessari piccoli  interventi manuali.
 
-NOTA sulla sicurezza:
+** NOTA sulla sicurezza:
 Questa APP è totalmente aperta, priva di ogni protezione, e contiene nei file le vostre credenziali in chiaro! 
 NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri dati, credenziali Tuya incluse, sono esposti!
 
