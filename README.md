@@ -3,14 +3,14 @@
 Dopo aver progettato il mese scorso un'interfaccia WEB per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget), poi ho elaborato anche una versione per TuyaCloud: TuyaUIweb. 
 Questa APP presenta tutti  i device Tuya, stanze e case, in una disposizione ad 'albero' dinamico, allinterno di un browser. Qgni nodo ha un popup che presenta i valori aggiornati delle proprietà del device. Per sicurezza, agisce solo in lettura: non altera i dati in Tuya Cloud in nessun modo.
 
-Prestazioni:
+### Prestazioni:
 In un solo colpo d'occhio si ha la situazione completa sotto controllo.
 In fase iniziale tutti i dati necessari sono letti da Tuya Cloud e viene costruita una struttura locale contenente TUTTE le informazioni. Il grafo ad albero di visualizzazione è costruito in base a queste informazioni.
 Tutti i nodi (root. case, stanze e  device) sono rappresentati da icone (customizzabili), grigie quandi il device è disconnesso, Il colore del link indica il tipo di device: se blu è WiFi, se rosso usa un HUB (subdevice).
 L'aggiornamento dei dati  avviene in polling: sono letti dal Cloud con frequenza regolabile dall'utente, da 30s a alcuni minuti, e i popup (customizzabili) sono aggiornati subito,
 Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in caso di aggiunte di nuovi device.
 
-Figura:
+![](https://github.com/msillano/TuyaUIweb/blob/main/pics/UIlook01.png?raw=true)
 
 Logging:
 E' possibile esportare su un file alcuni dati: l'utente deve specificare home, device e proprietà per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno, esportato su file automaticamente o su comando utente,
