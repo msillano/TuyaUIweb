@@ -1,4 +1,4 @@
-# TuyaUIUweb: Tuya WEBAPP User Interface #
+# TuyaUIweb: Tuya WEBAPP User Interface #
 
 Dopo aver progettato il mese scorso un'interfaccia WEB per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget), poi ho elaborato anche una versione per TuyaCloud: _TuyaUIweb_. 
 Questa webapp presenta tutti  i device Tuya, stanze e case, in una disposizione ad 'albero' dinamico, all'interno di un browser. Ogni nodo ha un popup che presenta i valori aggiornati delle proprietà del device. Per sicurezza, agisce solo in lettura: non altera i dati in Tuya Cloud in nessun modo.
