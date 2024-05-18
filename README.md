@@ -61,12 +61,12 @@ Questa APP è per utenti non alle prime armi, pertanto è accettabile che la con
 
 ## Customizzazioni
 
-Il programma è OpenSorce, in HTML+Javascript, è abbastanza documentato e modulare. Quindi è possibile ogni intervento. 
+Il programma è OpenSource, in HTML+Javascript, è abbastanza documentato e modulare. Quindi è possibile ogni intervento. 
 Due aree sono state privilegiate e poste per semplicità in un file separato con dettagliate istruzioni ed esempi:
 
  - _Tuya non permette più di cambiare le icone, per una opinabile  interpretazione dei suoi consulenti legali delle attuali leggi sul copyright._<br> 
 In questa APP ho scelto le icone `awesome4`, con un'[ampissima scelta](https://fontawesome.com/v4/cheatsheet/) e  di libero uso. Per personalizzarle, l'utente deve fornire un criterio di selezione e l'indicazione dell'icona da usare.<br> 
-Per default, come esempio, hanno icone speciali: i Temometri (device con nome 'Temp...'), le Valvole termostatiche (device con nome 'Termo...') ed i Gateway (device con 'Gateway' nel nome) . .
+Per default, come esempio, hanno icone speciali: i Temometri (device con nome 'Temp...'), le Valvole termostatiche (device con nome 'Termo...') ed i Gateway (device con 'Gateway' nel nome) - vedi immagini.
 
  - La personalizzazione del contenuto dei tooltip, che varia a seconda del device. Alcuni valori sono criptati: si può scegliere di non farli vedere, in altri casi occorre dividere per 10 o 100 per avere il valore in unità SI, etc.. Se si desidera si possono aggiungere nuove informazioni per esempio derivandole da quelle del device (e.g. temperatura in °C e anche in °F).<br>
 _Nota per gli utenti di TuyaDEAMON e HUB similari come HA: può essere molto utile inserire nel tooltip di ogni device anche il `device_id` (device.id) e `secret_key` (device.local_key)._
