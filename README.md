@@ -118,6 +118,16 @@ Il risultato JSON corretto è il seguente, utilizzabile con parser JSON per ricr
 ```
 E' un array di array contenenti le singole misure (oggetti).
 
+<hr>
+Licenza MIT
+
+_Questo progetto è un work-in-progress: viene fornito "così com'è", senza garanzie di alcun tipo, implicite o esplicite._
+
+- _Se sviluppate qualche estensione o applicazione interessante con TuyaUIweb fatemelo sapere: possiamo ospitarla qui._
+- _Per problemi riguardanti il codice ed il funzionamento di TuyaUIweb, aprite un 'issue' qui._
+- _Per problemi più generali riguardanti  Tuya, SmartLife (Tuya smart) e TuyaUIweb, che possono interessare anche altri utenti, postate pure nel gruppo [Tuya e Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_ 
+
+
 
 
 
