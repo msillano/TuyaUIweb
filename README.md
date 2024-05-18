@@ -49,9 +49,7 @@ _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri da
 A sinistra avvio OK (Chrome, CORS disattivato) a destra caso di errore CORS (Opera):
 
    <img src="https://github.com/msillano/TuyaUIweb/blob/main/pics/console_use01.png?raw=true" alt="normal start" width="300" />
-   <img src="https://github.com/msillano/TuyaUIweb/blob/main/pics/CORS_err01.png?raw=true" alt="CORS error" width="300" />
-
-   ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/CORS_err01.png?raw=true){: width=250}
+   <img src="https://github.com/msillano/TuyaUIweb/blob/main/pics/CORS_err01.png?raw=true" alt="CORS error" width="300" align="right" />
 
 ### Configurazione
 Questa APP è per utenti non alle prime armi, pertanto è accettabile che la configurazione avvenga direttamente editando un file. _Le solite avvertenze: fare una copia del file prima di ogni modifica, usare un editor UTF8 (io uso Notepad-plusplus), e attenzione a NON ALTERARE niente altro (soprattutto virgole  ','  ed  apici '"')._
