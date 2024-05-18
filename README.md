@@ -63,7 +63,50 @@ Per default, come esempio, hanno icone speciali: i Temometri (device con nome 'T
 _Nota per gli utenti di TuyaDEAMON e HUB similari come HA: può essere molto utile inserire nel tooltip di ogni device anche il `device_id` (device.id) e `secret_key` (device.local_key)._
 
 Queste customizzazioni NON sono necessarie, ma redono più semplice e gradevole l'uso della APP.
+<hr>
+### formato CSV
 
-LOGGING - ESEMPI
+Questo è un esempio di file di log in formato CVS:
+```
+[date, time, ROMA.TF_frigo.va_temperature, ROMA.Temperatura studio.va_temperature]
+[2024-05-17, 06:35:28, 71, 22]
+[2024-05-17, 06:37:28, 71, 22]
+... more ...
+```
+La prima riga contiene l'intestazione delle colonne, le righe succesive i dati.
+Le operazioni da fare sono le seguenti (in un editor ASCII, ad esempio Notepad++, con 'global find&replace'):
+1) Eliminare la parentesi quadra '[' all'inizio di ogni riga.
+2) Sostituire la parentesi quadra finale con un punto e virgola ';'.
+Il risultato CVS corretto è il seguente, importabile in molti DB e spreadsheet:
+```
+date, time, ROMA.TF_frigo.va_temperature, ROMA.Temperatura studio.va_temperature;
+2024-05-17, 06:35:28, 71, 22;
+2024-05-17, 06:37:28, 71, 22;
+... more ...
+```
+### formato JSON
+Questo è un esempio di file di log in formato JSON:
+```
+[{"home":"ROMA","device":"TF_frigo","status":"va_temperature","result":70,"day":"2024-05-17","time":"19:37:51"},
+ {"home":"ROMA","device":"Temperatura studio","status":"va_temperature","result":25,"day":"2024-05-17","time":"19:37:51"}],
+[{"home":"ROMA","device":"TF_frigo","status":"va_temperature","result":70,"day":"2024-05-17","time":"19:39:51"},
+ {"home":"ROMA","device":"Temperatura studio","status":"va_temperature","result":25,"day":"2024-05-17","time":"19:39:51"}],
+```
+Notare che tutti i dati identificativi sono aggiunti ad ogni misura, ottenendo un risultato più verboso del caso CVS.
+L'operazioni da fare è la seguente (in un editor ASCII, ad esempio Notepad++):
+1) Aggiungere una coppia di parentesi quadre '[]' per racchiudere tutto il contenuto.
+Il risultato JSON corretto è il seguente, utilizzabile con parser JSON per ricreare gli oggetti:
+```
+[
+[{"home":"ROMA","device":"TF_frigo","status":"va_temperature","result":70,"day":"2024-05-17","time":"19:37:51"},
+ {"home":"ROMA","device":"Temperatura studio","status":"va_temperature","result":25,"day":"2024-05-17","time":"19:37:51"}],
+[{"home":"ROMA","device":"TF_frigo","status":"va_temperature","result":70,"day":"2024-05-17","time":"19:39:51"},
+ {"home":"ROMA","device":"Temperatura studio","status":"va_temperature","result":25,"day":"2024-05-17","time":"19:39:51"}],
+]
+```
+E' un array di arreay contenenti le singole misure (oggetti).
+
+
+
 
 
