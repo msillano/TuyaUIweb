@@ -38,10 +38,9 @@ The program is OpenSource, in HTML+Javascript, is fairly well documented and mod
 
 _**This APP is totally open, without any protection, and contains your credentials in clear text in the files!**_ <br>
 _DO NOT make it accessible from the outside or by third parties, otherwise, all your data, including Tuya credentials, are exposed!_
-
 <hr>
 
-##Installation
+## Installation
  1) Download and unzip the `TuyaUIweb.1.x.zip` file to a directory (with the permissions required by the operating system). 
 2) Perform the configuration operations.
 3) The main file is `tuyaui.html`. A WEB server is not required: as the code is all in JavaScript, TuyaUIweb is executed by the browser. To launch it, see the `goTuyaUI.bat` file (for Windows). For other operating systems, create a similar script.<br>
@@ -55,15 +54,15 @@ On the left startup OK (Chrome, CORS disabled) on the right CORS error case (Ope
 
 <hr>
 
-##Configuration
+### Configuration
 This APP is for experienced users, therefore it is acceptable that the configuration is done directly by editing a file.
 
  - The INDISPENSABLE data to be entered are your own Tuya credentials (you should already have them, and for new users, there are many guides on the web. [This one](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) is one of the clearest, others are [listed here](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions).
  - Other options concern: timing (Cloud and log) and log configuration: the format, autosave, the required values, or the look & feel, such as the presence of pan/zoom buttons.
  - Update the goTuyaUI.bat launcher file with the paths of the host system.
 
-##Customizations
-Two areas have been highlighted and related functions are placed in a separate file for editing simplicity, with detailed instructions and examples:
+### Customizations
+Two areas have been highlighted and related functions are placed in a separate file for user editing simplicity, with detailed instructions and examples:
 
 **Custom icons**<br>
 Tuya no longer allows you to change the icons, due to a questionable interpretation of its current copyright laws by its legal advisors. In TuyaUIweb I have chosen the 'awesome4' icons, with a wide choice and free to use. To customize them, the user must provide a selection criterion and an indication of the icon to use.
@@ -71,7 +70,6 @@ _By default, for example, they have special icons: Thermometers (a device with t
 
 **Customization of tooltip content**<br>
 Depending on the device, not all properties in Tuya status are useful. Some values are encrypted: you can choose not to show them, in other cases you need to divide by 10 or 100 to have the value in SI units, etc. If you want, you can add new information, e.g. by deriving it from the device's data (e.g. temperature in °C and also in °F).
-
 <hr>
 
 ### CSV format
