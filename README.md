@@ -45,9 +45,13 @@ _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri da
 1) Scaricare e dezippare il file `TuyaUIweb.1.x.zip`  in una dir (con le autorizzazioni richieste dal S.O.).
 2) Il file principale è `tuyaui.html`.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows). Per altri S.O. creare uno script analogo. (Ignorare il messaggio Google: "stai utilizzando una segnalazione della riga di comando non supportata: - disable-web-security...": non supportata ma funzionante). 
 3) Eseguire le operazioni di configurazione
-4) In fase di installazione e setup è utile la console (nel browser - strumenti per programmatori -, o menu  'ispeziona elemento') perchè lì vanno i messaggi di informazione e di errore di TuyaUIWEB.
+4) In fase di installazione e setup è utile la console (nel browser - strumenti per programmatori -, o menu  'ispeziona elemento') perchè lì vanno i messaggi di informazione e di errore di TuyaUIWEB.<BR>
+A sinistra avvio OK (Chrome, CORS disattivato) a destra caso di errore CORS (Opera):
 
-   <ing src="https://github.com/msillano/TuyaUIweb/blob/main/pics/console_use01.png?raw=true" alt="normal start" width=300 />![](https://github.com/msillano/TuyaUIweb/blob/main/pics/CORS_err01.png?raw=true){width=250}
+   <img src="https://github.com/msillano/TuyaUIweb/blob/main/pics/console_use01.png?raw=true" alt="normal start" width="300" />
+   <img src="https://github.com/msillano/TuyaUIweb/blob/main/pics/CORS_err01.png?raw=true" alt="CORS error" width="300" />
+
+   ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/CORS_err01.png?raw=true){: width=250}
 
 ### Configurazione
 Questa APP è per utenti non alle prime armi, pertanto è accettabile che la configurazione avvenga direttamente editando un file. _Le solite avvertenze: fare una copia del file prima di ogni modifica, usare un editor UTF8 (io uso Notepad-plusplus), e attenzione a NON ALTERARE niente altro (soprattutto virgole  ','  ed  apici '"')._
