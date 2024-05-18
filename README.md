@@ -1,114 +1,112 @@
-# TuyaUIweb: Tuya WEBAPP User Interface #
+# TuyaUIweb: Elevate Your Tuya Device Monitoring Experience
 
-**TuyaUIweb, la mia nuova interfaccia web per Tuya, eleva il monitoraggio dei dispositivi Tuya a un livello superiore.** 
-Questa soluzione completa e dinamica organizza tutti i tuoi dispositivi, stanze e case in una struttura ad albero intuitiva all'interno di un browser web. Ogni nodo dell'albero presenta un tooltip informativo con i valori aggiornati in tempo reale delle proprietà del dispositivo, offrendoti una panoramica completa e immediata del tuo ecosistema Tuya. 
+This complete and dynamic solution organizes all your devices, rooms, and homes in an intuitive tree structure within a web browser. Each node in the tree has an informative tooltip with real-time updated values of the device's properties, giving you a complete and immediate overview of your Tuya ecosystem.
 
-Per garantire la massima sicurezza, TuyaUIweb opera esclusivamente in modalità di sola lettura, senza apportare alcuna modifica ai tuoi dati su Tuya Cloud. <br>
-Sviluppata utilizzando il vis-network e l'API TuyaCloud v2, TuyaUIweb rappresenta un passo avanti significativo nel monitoraggio e nella gestione dei tuoi dispositivi Tuya.
+To ensure maximum security, **TuyaUIweb** operates exclusively in read-only mode, without making any changes to your data on Tuya Cloud.
 
-### Prestazioni:
+Developed using `vis-network` and the `TuyaCloud v2` API, **TuyaUIweb** represents a significant step forward in monitoring and managing your Tuya devices.
 
-_In un solo colpo d'occhio si ha la situazione completa sotto controllo._
+##Features:
+ **At-a-glance overview of the entire situation.**
+In the initial phase, all necessary data is read from Tuya Cloud and a local structure is built containing ALL the information. The visualization tree graph is built based on this information.
 
-In fase iniziale tutti i dati necessari sono letti da Tuya Cloud e viene costruita una struttura locale contenente TUTTE le informazioni. Il grafo ad albero di visualizzazione è costruito in base a queste informazioni.<br>
-Tutti i nodi (root, case, stanze e  device) sono rappresentati da icone (customizzabili), grigie quando il device è disconnesso, Il colore del link indica il tipo di device: se blu è WiFi, se rosso usa un HUB (subdevice).
+**Real-time updates.**
+Data updates are polled: they are read from the `TuyaCloud` with a frequency that can be set by the user, from 30 seconds to a few minutes, and the popups are updated immediately.
 
-L'aggiornamento dei dati  avviene in polling: sono letti dal Cloud con frequenza regolabile dall'utente, da 30s a alcuni minuti, e i popup (customizzabili) sono aggiornati subito.<BR>
-Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in caso di aggiunte di nuovi device.
+**Logging and data export.**
+It is possible to export some data to a file: the user must specify `home`, `device`, and `status` (properties) to identify the data of interest and these are saved at regular intervals (minimum 1 minute) in an internal buffer (max 5000 records = 80h  @1rec/min), then automatically exported to a file or on user command.
+
+**Customizable look and feel.**
+The program is OpenSource, in HTML+Javascript, is fairly well documented and modular. Therefore, any intervention is possible, allowing you to adapt the program to individual needs.
 
 ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/UIlook01.png?raw=true)
 
-### Logging:
-E' possibile esportare su un file alcuni dati: l'utente deve specificare `home`, `device` e `status` (proprietà) per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno (max 5000 records - 80h@1 rec/min), esportato poi su file automaticamente o su comando utente.<br>
-L'utente può scegliere tra due formati: `CVS` (indicato, per esempio, per spreadsheet tipo Excel) oppure `JSON` (per elaborazioni più complesse con programmi ad hoc) con pochissimi interventi di editing sui file.
 
-E' anche possibile su comando avere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel pad della console oppure può essere copiata con cut&paste in formato JSON.
+### Implementation notes
 
+- TuyaUIweb derives from a similar interface designed for [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget).
+- The choice of the visualization library fell on [Vis-Network](https://visjs.github.io/vis-network/docs/network/) for its good flexibility combined with ease of use.
+- In the tooltips, by default, all the properties included in the 'status' of the device are presented, with the names and values used by Tuya Cloud. Some values can be encoded.
+- The first problem is the CORS security protocol, implemented by modern browsers. An application (even in js, node-red, etc) does not have this problem, but an APP that runs in a browser does. It is necessary to disable CORS when launching the browser (see `goTuyaUI.bat` file). It applies only to this instance, the others will remain protected.
 
-### Note di implementazione
+- Tuya places limits on the frequency of cloud access. **TuyaUIweb** takes this into account, and the initial phase (when it reads all the data from the Cloud) is blocking and not very short. As also in SmartLife.
+- To overcome the impossibility of creating files directly from an HTML page, again for security reasons, to export the data I used a file logging library [debugout.js](https://github.com/ inorganicik/debugout.js). For this reason, control over the generated files is not complete and small manual interventions are necessary.
+- The files are saved in the `download` dir, with the fixed name `tuyalog.cvs|json`, _make sure the OS. do not overwrite files with the same name!_
+- Operation continues normally even with the browser window iconised.
 
-- TuyaUIweb deriva da un'interfaccia analoga progettata per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget).
-- La scelta della libreria di visualizzazione è caduta su [Vis-Network](https://visjs.github.io/vis-network/docs/network/) per la buona flessibilità unita a semplicità di uso.
-- Nei tooltip, per default, sono presentate tutte le proprietà incluse nello 'status' del device, con i nomi e i valori usati da Tuya Cloud. Alcuni valori possono essere codificati.
-- Un primo problema è il protocollo di sicurezza CORS, implementato sui moderni browser. Una applicazione (anche in js, node-red, etc)  non ha questo problema, ma una APP che gira in un browser sì. E' necessario disabilitare CORS al memento del lancio del browser (vedi file `goTuyaUI.bat`). Vale solo per questa istanza, le altre resteranno protette.  
+**Safety NOTE**
 
-- Tuya pone dei limiti alla frequenza degli accessi al cloud. _TuyaUIweb_ ne tiene conto, e la fase iniziale (quando legge tutti i dati dal Cloud) è bloccante e non brevissima. Come anche in SmartLife.
-- Per ovviare all'impossibilità di creare file direttamente da una pagina HTML, sempre per motivi di sicurezza, per l'export dei dati sono ricorso ad una libreria di logging su file [debugout.js](https://github.com/inorganik/debugout.js). Per questo motivo il controllo sui file generati non è completo e sono necessari piccoli  interventi manuali.
-- I file sono salvati nella dir `download`, con il nome fisso `tuyalog.cvs|json`, _assicurarsi che il S.O. non sovrascriva i file con lo stesso nome!_
-- Il funzionamento continua regolarmente anche con la finestra del browser iconizzata.
+_**This APP is totally open, without any protection, and contains your credentials in clear text in the files!**_ <br>
+_DO NOT make it accessible from the outside or by third parties, otherwise, all your data, including Tuya credentials, are exposed!_
+
 <hr>
 
-**NOTA sulla sicurezza**
+##Installation
+ 1) Download and unzip the `TuyaUIweb.1.x.zip` file to a directory (with the permissions required by the operating system). 
+2) Perform the configuration operations.
+3) The main file is `tuyaui.html`. A WEB server is not required: as the code is all in JavaScript, TuyaUIweb is executed by the browser. To launch it, see the `goTuyaUI.bat` file (for Windows). For other operating systems, create a similar script.<br>
+note: Ignore the Chrome message: "You are using an unsupported command line flag: - disable-web-security...": unsupported but working.
+4) During installation and setup, the console is useful (in the browser - developer tools -, or menu 'inspect element') because the information and error messages of TuyaUIweb go there.
+On the left startup OK (Chrome, CORS disabled) on the right CORS error case (Opera):
 
-_**Questa APP è totalmente aperta, priva di ogni protezione, e contiene nei file le vostre credenziali in chiaro!**_ <br>
-_NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri dati, credenziali Tuya incluse, sono esposti!_
-
-### Installazione
-1) Scaricare e dezippare il file `TuyaUIweb.1.x.zip`  in una dir (con le autorizzazioni richieste dal S.O.).
-2) Il file principale è `tuyaui.html`.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows). Per altri S.O. creare uno script analogo. (Ignorare il messaggio Chrome: "stai utilizzando una segnalazione della riga di comando non supportata: - disable-web-security...": non supportata ma funzionante). 
-3) Eseguire le operazioni di configurazione
-4) In fase di installazione e setup è utile la console (nel browser - strumenti per programmatori -, o menu  'ispeziona elemento') perchè lì vanno i messaggi di informazione e di errore di TuyaUIweb.<BR>
-A sinistra avvio OK (Chrome, CORS disattivato) a destra caso di errore CORS (Opera):
 
    <img src="https://github.com/msillano/TuyaUIweb/blob/main/pics/console_use01.png?raw=true" alt="normal start" width="300" />
    <img src="https://github.com/msillano/TuyaUIweb/blob/main/pics/CORS_err01.png?raw=true" alt="CORS error" width="300" align="right" />
 
-### Configurazione
-Questa APP è per utenti non alle prime armi, pertanto è accettabile che la configurazione avvenga direttamente editando un file. _Le solite avvertenze: fare una copia del file prima di ogni modifica, usare un editor UTF8 (io uso Notepad-plusplus), e attenzione a NON ALTERARE niente altro (soprattutto virgole  ','  ed  apici '"')._
-
- - I dati INDISPENSABILI da inserire sono le proprie `credenziali Tuya` (dovreste già averle, ma per i nuovi utenti ci sono molte guide nel web. [Questa](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) è una delle più chiare), altre sono [elencate qui](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions).
- - Altre opzioni riguardano: timing (Cloud e log) e configurazione del log: il formato, l'autosave, i valori richiesti, oppure il look&feel, come la presenza dei bottoni di pan/zoom,
-- Aggiornare con i path del sistema ospite il file di lancio `goTuyaUI.bat`.
-
-## Customizzazioni
-
-Il programma è OpenSource, in HTML+Javascript, è abbastanza documentato e modulare. Quindi è possibile ogni intervento. 
-Due aree sono state privilegiate e poste per semplicità in un file separato con dettagliate istruzioni ed esempi:
-
- - _Tuya non permette più di cambiare le icone, per una opinabile  interpretazione dei suoi consulenti legali delle attuali leggi sul copyright._<br> 
-In questa APP ho scelto le icone `awesome4`, con un'[ampissima scelta](https://fontawesome.com/v4/cheatsheet/) e  di libero uso. Per personalizzarle, l'utente deve fornire un criterio di selezione e l'indicazione dell'icona da usare.<br> 
-Per default, come esempio, hanno icone speciali: i Temometri (device con nome 'Temp...'), le Valvole termostatiche (device con nome 'Termo...') ed i Gateway (device con 'Gateway' nel nome) - vedi immagini.
-
- - La personalizzazione del contenuto dei tooltip, che varia a seconda del device. Alcuni valori sono criptati: si può scegliere di non farli vedere, in altri casi occorre dividere per 10 o 100 per avere il valore in unità SI, etc.. Se si desidera si possono aggiungere nuove informazioni per esempio derivandole da quelle del device (e.g. temperatura in °C e anche in °F).<br>
-_Nota per gli utenti di TuyaDEAMON e HUB similari come HA: può essere molto utile inserire nel tooltip di ogni device anche il `device_id` (device.id) e `secret_key` (device.local_key)._
-
-Queste customizzazioni NON sono necessarie, ma redono più utile e gradevole l'uso di TuyaUIweb.
 <hr>
 
-### formato CSV
+##Configuration
+This APP is for experienced users, therefore it is acceptable that the configuration is done directly by editing a file.
 
-Questo è un esempio di file di log in formato CVS:
+ - The INDISPENSABLE data to be entered are your own Tuya credentials (you should already have them, and for new users, there are many guides on the web. [This one](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) is one of the clearest, others are [listed here](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions).
+ - Other options concern: timing (Cloud and log) and log configuration: the format, autosave, the required values, or the look & feel, such as the presence of pan/zoom buttons.
+ - Update the goTuyaUI.bat launcher file with the paths of the host system.
+
+##Customizations
+Two areas have been highlighted and related functions are placed in a separate file for editing simplicity, with detailed instructions and examples:
+
+**Custom icons**<br>
+Tuya no longer allows you to change the icons, due to a questionable interpretation of its current copyright laws by its legal advisors. In TuyaUIweb I have chosen the 'awesome4' icons, with a wide choice and free to use. To customize them, the user must provide a selection criterion and an indication of the icon to use.
+_By default, for example, they have special icons: Thermometers (a device with the name 'Temp...'), Thermostatic Valves (a device with the name 'Termo...'), and Gateways (a device with 'Gateway' in the name) - see images._
+
+**Customization of tooltip content**<br>
+Depending on the device, not all properties in Tuya status are useful. Some values are encrypted: you can choose not to show them, in other cases you need to divide by 10 or 100 to have the value in SI units, etc. If you want, you can add new information, e.g. by deriving it from the device's data (e.g. temperature in °C and also in °F).
+
+<hr>
+
+### CSV format
+This is an example of a log file in CVS format:
 ```
 [date, time, ROMA.TF_frigo.va_temperature, ROMA.Temperatura studio.va_temperature]
 [2024-05-17, 06:35:28, 71, 22]
 [2024-05-17, 06:37:28, 71, 22]
 ... more ...
 ```
-La prima riga contiene l'intestazione delle colonne, le righe succesive i dati.
-Le operazioni da fare sono le seguenti (in un editor ASCII, ad esempio Notepad++, con 'global find&replace'):
-1) Eliminare la parentesi quadra '[' all'inizio di ogni riga.
-2) Sostituire la parentesi quadra finale con un punto e virgola ';'.
+The first row contains the column headers, the following rows contain the data.
+The operations to do are the following (in an ASCII editor, for example, Notepad++, with 'global find&replace'):
+1) Remove the square bracket '[' at the beginning of each line.
+2) Replace the final square bracket with a semicolon ';'.
    
-Il risultato CVS corretto è il seguente, importabile in molti DB e spreadsheet:
+The correct CVS result is the following, which can be imported into many DBs and spreadsheets:
 ```
 date, time, ROMA.TF_frigo.va_temperature, ROMA.Temperatura studio.va_temperature;
 2024-05-17, 06:35:28, 71, 22;
 2024-05-17, 06:37:28, 71, 22;
 ... more ...
 ```
-### formato JSON
-Questo è un esempio di file di log in formato JSON:
+### JSON format
+This is an example of a log file in JSON format:
 ```
 [{"home":"ROMA","device":"TF_frigo","status":"va_temperature","result":70,"day":"2024-05-17","time":"19:37:51"},
  {"home":"ROMA","device":"Temperatura studio","status":"va_temperature","result":25,"day":"2024-05-17","time":"19:37:51"}],
 [{"home":"ROMA","device":"TF_frigo","status":"va_temperature","result":70,"day":"2024-05-17","time":"19:39:51"},
  {"home":"ROMA","device":"Temperatura studio","status":"va_temperature","result":25,"day":"2024-05-17","time":"19:39:51"}],
 ```
-Notare che tutti i dati identificativi sono aggiunti ad ogni misura, ottenendo un risultato più verboso del caso CVS.
-L'operazioni da fare è la seguente (in un editor ASCII, ad esempio Notepad++):
-1) Aggiungere una coppia di parentesi quadre '[]' per racchiudere tutto il contenuto.
+Note that all identifying data is added to each measurement, resulting in a more verbose result than the CVS case.
+The operations to do are the following (in an ASCII editor, for example Notepad++):
+1) Add a pair of square brackets '[]' to enclose all content.
    
-Il risultato JSON corretto è il seguente, utilizzabile con parser JSON per ricreare gli oggetti:
+The correct JSON result is the following, which can be used with JSON parsers to recreate the objects:
 ```
 [
 [{"home":"ROMA","device":"TF_frigo","status":"va_temperature","result":70,"day":"2024-05-17","time":"19:37:51"},
@@ -117,16 +115,16 @@ Il risultato JSON corretto è il seguente, utilizzabile con parser JSON per ricr
  {"home":"ROMA","device":"Temperatura studio","status":"va_temperature","result":25,"day":"2024-05-17","time":"19:39:51"}],
 ]
 ```
-E' un array di array contenenti le singole misure (oggetti).
+It is an array of arrays containing the individual measurements (objects).
 
 <hr>
-Licenza MIT
+MIT License
 
-_Questo progetto è un work-in-progress: viene fornito "così com'è", senza garanzie di alcun tipo, implicite o esplicite._
+_This project is a work-in-progress: it is provided "as is", without warranties of any kind, express or implied._
 
-- _Se sviluppate qualche estensione o applicazione interessante con TuyaUIweb fatemelo sapere: possiamo ospitarla qui._
-- _Per problemi riguardanti il codice ed il funzionamento di TuyaUIweb, aprite un 'issue' qui._
-- _Per problemi più generali riguardanti  Tuya, SmartLife (Tuya smart) e TuyaUIweb, che possono interessare anche altri utenti, postate pure nel gruppo [Tuya e Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_ 
+- _If you develop any interesting extension or application with TuyaUIweb let me know: we can host it here._
+- _For problems regarding the code and operation of TuyaUIweb, open an 'issue' here._
+- _For more general questions regarding Tuya, SmartLife (Tuya smart), and TuyaUIweb, which may also interest other users, please post in the group [Tuya and Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_
 
 
 
