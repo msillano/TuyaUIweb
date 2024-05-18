@@ -22,7 +22,7 @@ Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in 
 E' possibile esportare su un file alcuni dati: l'utente deve specificare `home`, `device` e `status` (proprietà) per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno (max 5000 records), esportato poi su file automaticamente o su comando utente.<br>
 L'utente può scegliere tra due formati: `CVS` (indicato, per esempio, per spreadsheet tipo Excel) oppure `JSON` (per elaborazioni più complesse con programmi ad hoc) con pochissimi interventi di editing sui file.
 
-E' anche possibile su comando avere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel log della console oppure può essere copiata con cut&paste in formato JSON.
+E' anche possibile su comando avere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel pad della console oppure può essere copiata con cut&paste in formato JSON.
 
 
 ### Note di implementazione
