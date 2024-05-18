@@ -64,6 +64,7 @@ _Nota per gli utenti di TuyaDEAMON e HUB similari come HA: può essere molto uti
 
 Queste customizzazioni NON sono necessarie, ma redono più semplice e gradevole l'uso della APP.
 <hr>
+
 ### formato CSV
 
 Questo è un esempio di file di log in formato CVS:
@@ -77,6 +78,7 @@ La prima riga contiene l'intestazione delle colonne, le righe succesive i dati.
 Le operazioni da fare sono le seguenti (in un editor ASCII, ad esempio Notepad++, con 'global find&replace'):
 1) Eliminare la parentesi quadra '[' all'inizio di ogni riga.
 2) Sostituire la parentesi quadra finale con un punto e virgola ';'.
+   
 Il risultato CVS corretto è il seguente, importabile in molti DB e spreadsheet:
 ```
 date, time, ROMA.TF_frigo.va_temperature, ROMA.Temperatura studio.va_temperature;
@@ -95,6 +97,7 @@ Questo è un esempio di file di log in formato JSON:
 Notare che tutti i dati identificativi sono aggiunti ad ogni misura, ottenendo un risultato più verboso del caso CVS.
 L'operazioni da fare è la seguente (in un editor ASCII, ad esempio Notepad++):
 1) Aggiungere una coppia di parentesi quadre '[]' per racchiudere tutto il contenuto.
+   
 Il risultato JSON corretto è il seguente, utilizzabile con parser JSON per ricreare gli oggetti:
 ```
 [
