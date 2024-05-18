@@ -3,8 +3,8 @@
 **TuyaUIweb, la mia nuova interfaccia web per Tuya, eleva il monitoraggio dei dispositivi Tuya a un livello superiore.** 
 Questa soluzione completa e dinamica organizza tutti i tuoi dispositivi, stanze e case in una struttura ad albero intuitiva all'interno di un browser web. Ogni nodo dell'albero presenta un tooltip informativo con i valori aggiornati in tempo reale delle proprietà del dispositivo, offrendoti una panoramica completa e immediata del tuo ecosistema Tuya. 
 
-Per garantire la massima sicurezza, TuyaUIweb opera esclusivamente in modalità di sola lettura, senza apportare alcuna modifica ai tuoi dati su Tuya Cloud. <br>
-Sviluppata utilizzando il vis-network e l'API TuyaCloud v2, TuyaUIweb rappresenta un passo avanti significativo nel monitoraggio e nella gestione dei tuoi dispositivi Tuya.
+Per garantire la massima sicurezza, **TuyaUIweb** opera esclusivamente in modalità di sola lettura, senza apportare alcuna modifica ai tuoi dati su Tuya Cloud. <br>
+Sviluppata utilizzando `vis-network` e l'API `TuyaCloud v2`, **TuyaUIweb** rappresenta un passo avanti significativo nel monitoraggio e nella gestione dei tuoi dispositivi Tuya.
 
 ### Prestazioni:
 
@@ -20,7 +20,7 @@ Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in 
 
 ### Logging:
 E' possibile esportare su un file alcuni dati: l'utente deve specificare `home`, `device` e `status` (proprietà) per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno (max 5000 records - 80h@1 rec/min), esportato poi su file automaticamente o su comando utente.<br>
-L'utente può scegliere tra due formati: `CVS` (indicato, per esempio, per spreadsheet tipo Excel) oppure `JSON` (per elaborazioni più complesse con programmi ad hoc) con pochissimi interventi di editing sui file.
+L'utente può scegliere tra due formati: `CVS` (indicato, per esempio, per DB e spreadsheet tipo Excel) oppure `JSON` (per elaborazioni più complesse con programmi ad hoc) con pochissimi interventi di editing sui file.
 
 E' anche possibile su comando avere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel pad della console oppure può essere copiata con cut&paste in formato JSON.
 
@@ -45,8 +45,8 @@ _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri da
 
 ### Installazione
 1) Scaricare e dezippare il file `TuyaUIweb.1.x.zip`  in una dir (con le autorizzazioni richieste dal S.O.).
-2) Il file principale è `tuyaui.html`.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows). Per altri S.O. creare uno script analogo. (Ignorare il messaggio Chrome: "stai utilizzando una segnalazione della riga di comando non supportata: - disable-web-security...": non supportata ma funzionante). 
-3) Eseguire le operazioni di configurazione
+2) Eseguire le operazioni di configurazione
+3) Il file principale è `tuyaui.html`.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows). Per altri S.O. creare uno script analogo. (Ignorare il messaggio Chrome: "stai utilizzando una segnalazione della riga di comando non supportata: - disable-web-security...": non supportata ma funzionante). 
 4) In fase di installazione e setup è utile la console (nel browser - strumenti per programmatori -, o menu  'ispeziona elemento') perchè lì vanno i messaggi di informazione e di errore di TuyaUIweb.<BR>
 A sinistra avvio OK (Chrome, CORS disattivato) a destra caso di errore CORS (Opera):
 
@@ -54,15 +54,15 @@ A sinistra avvio OK (Chrome, CORS disattivato) a destra caso di errore CORS (Ope
    <img src="https://github.com/msillano/TuyaUIweb/blob/main/pics/CORS_err01.png?raw=true" alt="CORS error" width="300" align="right" />
 
 ### Configurazione
-Questa APP è per utenti non alle prime armi, pertanto è accettabile che la configurazione avvenga direttamente editando un file. _Le solite avvertenze: fare una copia del file prima di ogni modifica, usare un editor UTF8 (io uso Notepad-plusplus), e attenzione a NON ALTERARE niente altro (soprattutto virgole  ','  ed  apici '"')._
+Questa **TuyaUIweb** è per utenti non alle prime armi, pertanto è accettabile che la configurazione avvenga direttamente editando un file. _Le solite avvertenze: fare una copia del file prima di ogni modifica, usare un editor UTF8 (io uso Notepad-plusplus), e attenzione a NON ALTERARE niente altro (soprattutto virgole  ','  ed  apici '"')._
 
- - I dati INDISPENSABILI da inserire sono le proprie `credenziali Tuya` (dovreste già averle, ma per i nuovi utenti ci sono molte guide nel web. [Questa](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) è una delle più chiare), altre sono [elencate qui](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions).
+ - I dati INDISPENSABILI da inserire sono le proprie `credenziali Tuya` (dovreste già averle, ma per i nuovi utenti ci sono molte guide nel web. [Questa](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) è una delle più chiare, altre sono [elencate qui](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions)).
  - Altre opzioni riguardano: timing (Cloud e log) e configurazione del log: il formato, l'autosave, i valori richiesti, oppure il look&feel, come la presenza dei bottoni di pan/zoom,
 - Aggiornare con i path del sistema ospite il file di lancio `goTuyaUI.bat`.
 
 ## Customizzazioni
 
-Il programma è OpenSource, in HTML+Javascript, è abbastanza documentato e modulare. Quindi è possibile ogni intervento. 
+Il **TuyaUIweb** è OpenSource, in HTML+Javascript, è abbastanza documentato e modulare. Quindi è possibile ogni intervento. 
 Due aree sono state privilegiate e poste per semplicità in un file separato con dettagliate istruzioni ed esempi:
 
  - _Tuya non permette più di cambiare le icone, per una opinabile  interpretazione dei suoi consulenti legali delle attuali leggi sul copyright._<br> 
