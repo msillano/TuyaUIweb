@@ -7,13 +7,13 @@ To ensure maximum security, **TuyaUIweb** operates exclusively in read-only mode
 Developed using `vis-network` and the `TuyaCloud v2` API, **TuyaUIweb** represents a significant step forward in monitoring and managing your Tuya devices.
 
 ### Features:
- **At-a-glance overview of the entire situation.**
+ **At-a-glance overview of the entire situation.** <br>
 In the initial phase, all necessary data is read from Tuya Cloud and a local structure is built containing ALL the information. The visualization tree graph is built based on this information.
 
-**Real-time updates.**
+**Real-time updates.** <br>
 Data updates are polled: they are read from the `TuyaCloud` with a frequency that can be set by the user, from 30 seconds to a few minutes, and the popups are updated immediately.
 
-**Logging and data export.**
+**Logging and data export.** <br>
 It is possible to export some data to a file: the user must specify `home`, `device`, and `status` (properties) to identify the data of interest and these are saved at regular intervals (minimum 1 minute) in an internal buffer (max 5000 records = 80h  @1rec/min), then automatically exported to a file or on user command.
 
 **Customizable look and feel.**
@@ -30,11 +30,11 @@ The program is OpenSource, in HTML+Javascript, is fairly well documented and mod
 - The first problem is the CORS security protocol, implemented by modern browsers. An application (even in js, node-red, etc) does not have this problem, but an APP that runs in a browser does. It is necessary to disable CORS when launching the browser (see `goTuyaUI.bat` file). It applies only to this instance, the others will remain protected.
 
 - Tuya places limits on the frequency of cloud access. **TuyaUIweb** takes this into account, and the initial phase (when it reads all the data from the Cloud) is blocking and not very short. As also in SmartLife.
-- To overcome the impossibility of creating files directly from an HTML page, again for security reasons, to export the data I used a file logging library [debugout.js](https://github.com/ inorganicik/debugout.js). For this reason, control over the generated files is not complete and small manual interventions are necessary.
+- To overcome the impossibility of creating files directly from an HTML page, again for security reasons, to export the data I used a file logging library [debugout.js](https://github.com/ inorganicik/debugout.js). For this reason, the control over the generated files is not complete, and small manual interventions are necessary.
 - The files are saved in the `download` dir, with the fixed name `tuyalog.cvs|json`, _make sure the OS. do not overwrite files with the same name!_
-- Operation continues normally even with the browser window iconised.
+- Operation continues normally even with the browser window iconized.
 
-**Safety NOTE**
+### Safety NOTE
 
 _**This APP is totally open, without any protection, and contains your credentials in clear text in the files!**_ <br>
 _DO NOT make it accessible from the outside or by third parties, otherwise, all your data, including Tuya credentials, are exposed!_
