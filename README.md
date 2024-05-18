@@ -47,6 +47,8 @@ _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri da
 3) Eseguire le operazioni di configurazione
 4) In fase di installazione e setup è utile la console (nel browser - strumenti per programmatori -, o menu  'ispeziona elemento') perchè lì vanno i messaggi di informazione e di errore di TuyaUIWEB.
 
+   ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/console_use01.png?raw=true)
+
 ### Configurazione
 Questa APP è per utenti non alle prime armi, pertanto è accettabile che la configurazione avvenga direttamente editando un file. _Le solite avvertenze: fare una copia del file prima di ogni modifica, usare un editor UTF8 (io uso Notepad-plusplus), e attenzione a NON ALTERARE niente altro (soprattutto virgole  ','  ed  apici '"')._
 
