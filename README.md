@@ -1,4 +1,4 @@
-# TuyaUIweb: Elevate Your Tuya Device Monitoring Experience
+# Elevate Your Tuya Device Monitoring Experience
 
 This complete and dynamic solution organizes all your devices, rooms, and homes in an intuitive tree structure within a web browser. Each node in the tree has an informative tooltip with real-time updated values of the device's properties, giving you a complete and immediate overview of your Tuya ecosystem.
 
@@ -6,7 +6,7 @@ To ensure maximum security, **TuyaUIweb** operates exclusively in read-only mode
 
 Developed using `vis-network` and the `TuyaCloud v2` API, **TuyaUIweb** represents a significant step forward in monitoring and managing your Tuya devices.
 
-##Features:
+### Features:
  **At-a-glance overview of the entire situation.**
 In the initial phase, all necessary data is read from Tuya Cloud and a local structure is built containing ALL the information. The visualization tree graph is built based on this information.
 
