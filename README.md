@@ -107,7 +107,7 @@ Il risultato JSON corretto è il seguente, utilizzabile con parser JSON per ricr
  {"home":"ROMA","device":"Temperatura studio","status":"va_temperature","result":25,"day":"2024-05-17","time":"19:39:51"}],
 ]
 ```
-E' un array di arreay contenenti le singole misure (oggetti).
+E' un array di array contenenti le singole misure (oggetti).
 
 
 
