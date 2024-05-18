@@ -1,14 +1,17 @@
 # TuyaUIweb: Tuya WEBAPP User Interface #
 
-Dopo aver progettato il mese scorso un'interfaccia WEB per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget), poi ho elaborato anche una versione per TuyaCloud: _TuyaUIweb_. 
-Questa webapp presenta tutti  i device Tuya, stanze e case, in una disposizione ad 'albero' dinamico, all'interno di un browser. Ogni nodo ha un popup che presenta i valori aggiornati delle proprietà del device. Per sicurezza, agisce solo in lettura: non altera i dati in Tuya Cloud in nessun modo.
+**TuyaUIweb, la mia nuova interfaccia web per Tuya, eleva il monitoraggio dei dispositivi Tuya a un livello superiore.** 
+Questa soluzione completa e dinamica organizza tutti i tuoi dispositivi, stanze e case in una struttura ad albero intuitiva all'interno di un browser web. Ogni nodo dell'albero presenta un tooltip informativo con i valori aggiornati in tempo reale delle proprietà del dispositivo, offrendoti una panoramica completa e immediata del tuo ecosistema Tuya. 
+
+Per garantire la massima sicurezza, TuyaUIweb opera esclusivamente in modalità di sola lettura, senza apportare alcuna modifica ai tuoi dati su Tuya Cloud. <br>
+Sviluppata utilizzando il vis-network e l'API TuyaCloud v2, TuyaUIweb rappresenta un passo avanti significativo nel monitoraggio e nella gestione dei tuoi dispositivi Tuya.
 
 ### Prestazioni:
 
 _In un solo colpo d'occhio si ha la situazione completa sotto controllo._
 
 In fase iniziale tutti i dati necessari sono letti da Tuya Cloud e viene costruita una struttura locale contenente TUTTE le informazioni. Il grafo ad albero di visualizzazione è costruito in base a queste informazioni.<br>
-Tutti i nodi (root, case, stanze e  device) sono rappresentati da icone (customizzabili), grigie quandi il device è disconnesso, Il colore del link indica il tipo di device: se blu è WiFi, se rosso usa un HUB (subdevice).
+Tutti i nodi (root, case, stanze e  device) sono rappresentati da icone (customizzabili), grigie quando il device è disconnesso, Il colore del link indica il tipo di device: se blu è WiFi, se rosso usa un HUB (subdevice).
 
 L'aggiornamento dei dati  avviene in polling: sono letti dal Cloud con frequenza regolabile dall'utente, da 30s a alcuni minuti, e i popup (customizzabili) sono aggiornati subito.<BR>
 Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in caso di aggiunte di nuovi device.
@@ -16,7 +19,7 @@ Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in 
 ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/UIlook01.png?raw=true)
 
 ### Logging:
-E' possibile esportare su un file alcuni dati: l'utente deve specificare `home`, `device` e `status` (proprietà) per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno, esportato poi su file automaticamente o su comando utente.<br>
+E' possibile esportare su un file alcuni dati: l'utente deve specificare `home`, `device` e `status` (proprietà) per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno (max 5000 records), esportato poi su file automaticamente o su comando utente.<br>
 L'utente può scegliere tra due formati: `CVS` (indicato, per esempio, per spreadsheet tipo Excel) oppure `JSON` (per elaborazioni più complesse con programmi ad hoc) con pochissimi interventi di editing sui file.
 
 E' anche possibile su comando avere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel log della console oppure può essere copiata con cut&paste in formato JSON.
@@ -24,6 +27,7 @@ E' anche possibile su comando avere nella console l'intera struttura dati ottenu
 
 ### Note di implementazione
 
+- TuyaUIweb deriva da un'interfaccia analoga progettata per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget).
 - La scelta della libreria di visualizzazione è caduta su [Vis-Network](https://visjs.github.io/vis-network/docs/network/) per la buona flessibilità unita a semplicità di uso.
 - Un primo problema è il protocollo di sicurezza CORS, implementato sui moderni browser. Una applicazione (anche in js, node-red, etc)  non ha questo problema, ma una APP che gira in un browser sì. E' necessario disabilitare CORS al memento del lancio del browser (vedi file goTuyaUI.bat). Vale solo per questa istanza, le altre resteranno protette.  
 - I file sono salvati nella dir `download`, con il nome fisso `tuyalog.cvs|json`, _assicurarsi che il S.O. non sovrascriva i file con lo stesso nome!_
