@@ -72,7 +72,7 @@ Per default, come esempio, hanno icone speciali: i Temometri (device con nome 'T
  - La personalizzazione del contenuto dei tooltip, che varia a seconda del device. Alcuni valori sono criptati: si può scegliere di non farli vedere, in altri casi occorre dividere per 10 o 100 per avere il valore in unità SI, etc.. Se si desidera si possono aggiungere nuove informazioni per esempio derivandole da quelle del device (e.g. temperatura in °C e anche in °F).<br>
 _Nota per gli utenti di TuyaDEAMON e HUB similari come HA: può essere molto utile inserire nel tooltip di ogni device anche il `device_id` (device.id) e `secret_key` (device.local_key)._
 
-Queste customizzazioni NON sono necessarie, ma redono più semplice e gradevole l'uso della APP.
+Queste customizzazioni NON sono necessarie, ma redono più utile e gradevole l'uso di TuyaUIweb.
 <hr>
 
 ### formato CSV
