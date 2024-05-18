@@ -69,14 +69,14 @@ Due aree sono state privilegiate e le rispettive funzioni poste per semplicità 
 
  - _Tuya non permette più di cambiare le icone, per una opinabile  interpretazione dei suoi consulenti legali delle attuali leggi sul copyright._  
 Per questa APP ho scelto le icone `awesome4`, con un'[ampissima scelta](https://fontawesome.com/v4/cheatsheet/) e  di libero uso. Di default tutti i device hanno la stessa icona, un cubo.<br>
-Me sono facilmente personalizzabili dall'utente: basta fornire un criterio di selezione dei device e l'indicazione dell'icona `awesome4` da usare. Come esempio, hanno icone speciali:
+Me sono facilmente personalizzabili dall'utente: basta fornire un criterio di selezione dei device e l'indicazione dell'icona `awesome4` da usare. Come esempio, hanno icone speciali (vedi immagini):
    - i Termometri (device con nome 'Temp...')
    - le Valvole termostatiche (device con nome 'Termo...')
-   - i Gateway (device con 'Gateway' nel nome) - vedi immagini.
-
+   - i Gateway (device con 'Gateway' nel nome)
+     
  - Il contenuto dei tooltip, varia a seconda del device. E' un settore dove è utile la possibilità di personalizzazioni, il metodo scelto (un filtro) permette ogni libertà: <br>
-    - Alcuni valori sono criptati: si può scegliere di non farli vedere  - oppure di decodificarli, il codice necessario è disponibile in TuyaDAEMON, ma ho scartato questa opzione per non avere tooltip troppo grandi.
-    - In altri casi occorre dividere per 10 o 100 per avere il valore in unità SI, etc...  
+    - Alcuni valori sono criptati: si può scegliere di non farli vedere  - oppure di decodificarli, il codice necessario è disponibile in TuyaDAEMON, ma ho scartato questa opzione per non avere tooltip troppo grandi (vedi immagine 2)
+    - In altri casi occorre dividere per 10 o 100 per avere il valore in unità SI, (vedi immagine 1)   
     - Come sviluppatore preferisco avere i nomi delle proprietà originali Tuya, ma si possono rendere più frendly traducendoli in Italiano.
     - Se si desidera si possono anche aggiungere nuove informazioni per esempio derivandole da quelle del device (e.g. temperatura in °C ed anche in °F).
     - Per gli utenti di TuyaDEAMON o di HUB similari come HA: può essere molto utile inserire nel tooltip di ogni device anche il `device_id` (device.id) e `secret_key` (device.local_key).
@@ -129,10 +129,13 @@ Il risultato JSON corretto è il seguente, utilizzabile con parser JSON per ricr
 E' un array di array contenenti le singole misure (oggetti).
 
 <hr>
-Licenza MIT
+Progetto OpenSource, Licenza MIT, (c)2024 marco sillano
 
 _Questo progetto è un work-in-progress: viene fornito "così com'è", senza garanzie di alcun tipo, implicite o esplicite._
 
 - _Se sviluppate qualche estensione o applicazione interessante con TuyaUIweb fatemelo sapere: possiamo ospitarla qui._
 - _Per problemi riguardanti il codice ed il funzionamento di TuyaUIweb, aprite un 'issue' qui._
-- _Per problemi più generali riguardanti  Tuya, SmartLife (Tuya smart) e TuyaUIweb, che possono interessare anche altri utenti, postate pure nel gruppo [Tuya e Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_ 
+- _Per problemi più generali riguardanti  Tuya, SmartLife (Tuya smart) e TuyaUIweb, che possono interessare anche altri utenti, postate pure nel gruppo [Tuya e Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)
+
+Grazie per l'interesse
+m.s.
