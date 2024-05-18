@@ -18,11 +18,11 @@ Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in 
 
 ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/UIlook01.png?raw=true)
 
-### Logging:
+### Logging ed esportazione dati
 E' possibile esportare su un file alcuni dati: l'utente deve specificare `home`, `device` e `status` (proprietà) per identificare i dati che interessano e questi sono salvati ad intervalli regolari (minimo 1 minuto) in un buffer interno (max 5000 records - 80h@1 rec/min), esportato poi su file automaticamente o su comando utente.<br>
 L'utente può scegliere tra due formati: `CVS` (indicato, per esempio, per DB e spreadsheet tipo Excel) oppure `JSON` (per elaborazioni più complesse con programmi ad hoc) con pochissimi interventi di editing sui file.
 
-E' anche possibile su comando avere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel pad della console oppure può essere copiata con cut&paste in formato JSON.
+E' anche possibile su comando avere nella console l'intera struttura dati ottenuta da Tuya Cloud: può essere esplorata a ogni livello nel pad della console oppure può essere copiata con copy&paste in formato JSON.
 
 
 ### Note di implementazione
@@ -36,12 +36,12 @@ E' anche possibile su comando avere nella console l'intera struttura dati ottenu
 - Per ovviare all'impossibilità di creare file direttamente da una pagina HTML, sempre per motivi di sicurezza, per l'export dei dati sono ricorso ad una libreria di logging su file [debugout.js](https://github.com/inorganik/debugout.js). Per questo motivo il controllo sui file generati non è completo e sono necessari piccoli  interventi manuali.
 - I file sono salvati nella dir `download`, con il nome fisso `tuyalog.cvs|json`, _assicurarsi che il S.O. non sovrascriva i file con lo stesso nome!_
 - Il funzionamento continua regolarmente anche con la finestra del browser iconizzata.
-<hr>
 
 **NOTA sulla sicurezza**
 
 _**Questa APP è totalmente aperta, priva di ogni protezione, e contiene nei file le vostre credenziali in chiaro!**_ <br>
 _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri dati, credenziali Tuya incluse, sono esposti!_
+<hr>
 
 ### Installazione
 1) Scaricare e dezippare il file `TuyaUIweb.1.x.zip`  in una dir (con le autorizzazioni richieste dal S.O.).
