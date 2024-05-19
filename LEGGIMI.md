@@ -49,7 +49,7 @@ _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri da
 ### Installazione
 1) Scaricare e dezippare il file `TuyaUIweb.1.x.zip`  in una dir (con le autorizzazioni richieste dal S.O.).
 2) Eseguire le operazioni di configurazione
-3) Il file principale è `tuyaui.html`.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows). Per altri S.O. creare uno script analogo. (Ignorare il messaggio Chrome: "stai utilizzando una segnalazione della riga di comando non supportata: - disable-web-security...": non supportata ma funzionante). 
+3) Il file principale è `tuyaui.html`.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows - Chrome). Per altri S.O. creare uno script analogo. (Ignorare il messaggio Chrome: "stai utilizzando una segnalazione della riga di comando non supportata: - disable-web-security...": non supportata ma funzionante). 
 4) In fase di installazione e setup è utile la console (nel browser - strumenti per programmatori -, o menu contestuale 'ispeziona') perchè lì vanno i messaggi di informazione e di errore di TuyaUIweb.<BR>
 Nelle immagini: a sinistra avvio OK (Chrome, CORS disattivato) a destra caso di errore CORS (Opera):
 
