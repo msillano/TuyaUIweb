@@ -127,11 +127,13 @@ _This project is a work-in-progress: it is provided "as is", without warranties 
 - _For problems regarding the code and operation of TuyaUIweb, open an 'issue' here ([githun](https://github.com/msillano/TuyaUIweb/issues))._
 - _For more general questions regarding Tuya, SmartLife (Tuya smart), and TuyaUIweb, which may also interest other users, please post in the group [Tuya and Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_
 
-Thank you for your interest in TuyaUIweb
+Thank you for your interest in TuyaUIweb <br>
 m.s.
 
 <hr>
+
 ### Acknowledgments
+
  - https://visjs.github.io/vis-network/docs/network
  - https://fontawesome.com/v4/icons/
  - https://code.google.com/archive/p/crypto-js/
