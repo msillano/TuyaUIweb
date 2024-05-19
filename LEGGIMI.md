@@ -4,8 +4,9 @@
 **TuyaUIweb, la mia nuova interfaccia web per Tuya, eleva il monitoraggio dei dispositivi Tuya a un livello superiore.** 
 Questa soluzione completa e dinamica organizza tutti i tuoi dispositivi, stanze e case in una struttura ad albero intuitiva all'interno di un browser web. Ogni nodo dell'albero presenta un tooltip informativo con i valori aggiornati in tempo reale delle proprietà del dispositivo, offrendoti una panoramica completa e immediata del tuo ecosistema Tuya. 
 
-Per garantire la massima sicurezza, **TuyaUIweb** opera esclusivamente in modalità di sola lettura, senza apportare alcuna modifica ai tuoi dati su Tuya Cloud. <br>
+**_Per garantire la massima sicurezza, **TuyaUIweb** opera esclusivamente in modalità di sola lettura, senza apportare alcuna modifica ai tuoi dati su Tuya Cloud._** <br>
 Sviluppata utilizzando `vis-network` e l'API `TuyaCloud v2`, **TuyaUIweb** rappresenta un passo avanti significativo nel monitoraggio e nella gestione dei tuoi dispositivi Tuya.
+
 
 ### Prestazioni:
 
