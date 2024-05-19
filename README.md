@@ -28,7 +28,7 @@ The program is OpenSource, in HTML+Javascript, is fairly well documented and mod
 - TuyaUIweb derives from a similar interface designed for [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget).
 - The choice of the visualization library fell on [Vis-Network](https://visjs.github.io/vis-network/docs/network/) for its good flexibility combined with ease of use.
 - In the tooltips, by default, all the properties included in the 'status' of the device are presented, with the names and values used by Tuya Cloud. Some values can be encoded.
-- The first problem is the CORS security protocol, implemented by modern browsers. An application (even in js, node-red, etc) does not have this problem, but an APP that runs in a browser does. It is necessary to disable CORS when launching the browser - tested on Chrome Version 125.0.6422.61 (64 bit):<br>
+- The first problem is the CORS security protocol, implemented by modern browsers. An application (even in js, node-red, etc) does not have this problem, but an APP that runs in a browser does. It is necessary to disable CORS when launching the browser - tested on Chrome Version 125.0.6422.61 (64-bit):<br>
    `chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`<br>
  (see `goTuyaUI.bat` file). It applies only to this instance, the others will remain protected.
 
