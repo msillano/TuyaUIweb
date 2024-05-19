@@ -123,8 +123,8 @@ MIT License
 
 _This project is a work-in-progress: it is provided "as is", without warranties of any kind, express or implied._
 
-- _If you develop any interesting extension or application with TuyaUIweb let me know: we can host it here._
-- _For problems regarding the code and operation of TuyaUIweb, open an 'issue' here._
+- _If you develop any interesting extension or application with TuyaUIweb let me know: we can insert it here._
+- _For problems regarding the code and operation of TuyaUIweb, open an 'issue' here ([githun](https://github.com/msillano/TuyaUIweb/issues))._
 - _For more general questions regarding Tuya, SmartLife (Tuya smart), and TuyaUIweb, which may also interest other users, please post in the group [Tuya and Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_
 
 Thank you for your interest in TuyaUIweb
