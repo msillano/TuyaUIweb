@@ -137,7 +137,7 @@ _Questo progetto è un work-in-progress: viene fornito "così com'è", senza gar
 - _Per problemi riguardanti il codice ed il funzionamento di TuyaUIweb, aprite un 'issue' qui ([github](https://github.com/msillano/TuyaUIweb/issues))._
 - _Per problemi più generali riguardanti  Tuya, SmartLife (Tuya smart) e TuyaUIweb, che possono interessare anche altri utenti, postate pure nel gruppo [Tuya e Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_
 
-Grazie per l'interesse
+Grazie per l'interesse <ms>
 m.s.
 
 <hr>
