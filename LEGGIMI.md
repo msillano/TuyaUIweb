@@ -133,8 +133,8 @@ Progetto OpenSource, Licenza MIT, (c)2024 marco sillano
 
 _Questo progetto è un work-in-progress: viene fornito "così com'è", senza garanzie di alcun tipo, implicite o esplicite._
 
-- _Se sviluppate qualche estensione o applicazione interessante con TuyaUIweb fatemelo sapere: possiamo ospitarla qui._
-- _Per problemi riguardanti il codice ed il funzionamento di TuyaUIweb, aprite un 'issue' qui._
+- _Se sviluppate qualche estensione o applicazione interessante con TuyaUIweb fatemelo sapere: possiamo inserirla qui._
+- _Per problemi riguardanti il codice ed il funzionamento di TuyaUIweb, aprite un 'issue' qui ([github](https://github.com/msillano/TuyaUIweb/issues))._
 - _Per problemi più generali riguardanti  Tuya, SmartLife (Tuya smart) e TuyaUIweb, che possono interessare anche altri utenti, postate pure nel gruppo [Tuya e Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_
 
 Grazie per l'interesse
