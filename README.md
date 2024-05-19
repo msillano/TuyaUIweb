@@ -34,7 +34,7 @@ The program is OpenSource, in HTML+Javascript, is fairly well documented and mod
 
 - Tuya places limits on the frequency of cloud access. **TuyaUIweb** takes this into account, and the initial phase (when it reads all the data from the Cloud) is blocking and not very short. As also in SmartLife.
 - To overcome the impossibility of creating files directly from an HTML page, again for security reasons, to export the data I used a file logging library [debugout.js](https://github.com/ inorganicik/debugout.js). For this reason, the control over the generated files is not complete, and small manual interventions are necessary.
-- The files are saved in the `download` dir, with the fixed name `tuyalog.cvs|json`, _make sure the OS. do not overwrite files with the same name!_
+- The files are saved in the `download` dir, with the fixed name `tuyalog-hh-mm-ss.cvs|json`, _make sure the OS. do not overwrite files with the same name!_
 - Operation continues normally even with the browser window iconized.
 
 ### Safety NOTE
