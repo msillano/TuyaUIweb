@@ -135,7 +135,7 @@ _Questo progetto è un work-in-progress: viene fornito "così com'è", senza gar
 
 - _Se sviluppate qualche estensione o applicazione interessante con TuyaUIweb fatemelo sapere: possiamo ospitarla qui._
 - _Per problemi riguardanti il codice ed il funzionamento di TuyaUIweb, aprite un 'issue' qui._
-- _Per problemi più generali riguardanti  Tuya, SmartLife (Tuya smart) e TuyaUIweb, che possono interessare anche altri utenti, postate pure nel gruppo [Tuya e Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)
+- _Per problemi più generali riguardanti  Tuya, SmartLife (Tuya smart) e TuyaUIweb, che possono interessare anche altri utenti, postate pure nel gruppo [Tuya e Smart Life Italia](https://www.facebook.com/groups/tuyaitalia)_
 
 Grazie per l'interesse
 m.s.
