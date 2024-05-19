@@ -141,6 +141,7 @@ Grazie per l'interesse
 m.s.
 
 <hr>
+
 ### Riconoscimenti
 
 - https://visjs.github.io/vis-network/docs/network
