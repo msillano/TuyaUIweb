@@ -44,7 +44,7 @@ _DO NOT make it accessible from the outside or by third parties, otherwise, all 
 <hr>
 
 ## Installation
- 1) Download and unzip the `TuyaUIweb.1.x.zip` file to a directory (with the permissions required by the operating system). 
+1) Download and unzip the `TuyaUIweb.1.x.zip` file to a directory (with the permissions required by the operating system). 
 2) Perform the configuration operations.
 3) The main file is `tuyaui.html`. A WEB server is not required: as the code is all in JavaScript, TuyaUIweb is executed by the browser. To launch it, see the `goTuyaUI.bat` file (for Windows). For other operating systems, create a similar script.<br>
 note: Ignore the Chrome message: "You are using an unsupported command line flag: - disable-web-security...": unsupported but working.
@@ -58,7 +58,7 @@ On the left startup OK (Chrome, CORS disabled) on the right CORS error case (Ope
 <hr>
 
 ### Configuration
-This APP is for experienced users, therefore it is acceptable that the configuration is done directly by editing a file.
+This APP is for experienced users, therefore it is acceptable that the configuration is done directly by editing a file (`config.js`).
 
  - The INDISPENSABLE data to be entered are your own Tuya credentials (you should already have them, and for new users, there are many guides on the web. [This one](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) is one of the clearest, others are [listed here](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions).
  - Other options concern: timing (Cloud and log) and log configuration: the format, autosave, the required values, or the look & feel, such as the presence of pan/zoom buttons.
