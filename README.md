@@ -130,6 +130,13 @@ _This project is a work-in-progress: it is provided "as is", without warranties 
 Thank you for your interest in TuyaUIweb
 m.s.
 
+<hr>
+### Acknowledgments
+ - https://visjs.github.io/vis-network/docs/network
+ - https://fontawesome.com/v4/icons/
+ - https://code.google.com/archive/p/crypto-js/
+ - https://github.com/inorganik/debugout.js 
+
 
 
 
