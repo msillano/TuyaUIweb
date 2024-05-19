@@ -31,8 +31,9 @@ E' anche possibile su comando avere nella console l'intera struttura dati ottenu
 - TuyaUIweb deriva da un'interfaccia analoga progettata per [TuyaDAEMON](https://github.com/msillano/tuyaDEAMON-applications/tree/main/daemon.visUI.widget).
 - La scelta della libreria di visualizzazione è caduta su [Vis-Network](https://visjs.github.io/vis-network/docs/network/) per la buona flessibilità unita a semplicità di uso.
 - Nei tooltip, per default, sono presentate tutte le proprietà incluse nello 'status' del device, con i nomi e i valori usati da Tuya Cloud. Alcuni valori possono essere codificati.
-- Un primo problema è il protocollo di sicurezza CORS, implementato sui moderni browser. Una applicazione (anche in js, node-red, etc)  non ha questo problema, ma una APP che gira in un browser sì. E' necessario disabilitare CORS al memento del lancio del browser. Esempio per Chrome:<br>
-   `chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`<br> (vedi file `goTuyaUI.bat`). Vale solo per questa istanza, le altre resteranno protette.  
+- Un primo problema è il protocollo di sicurezza CORS, implementato sui moderni browser. Una applicazione (anche in js, node-red, etc)  non ha questo problema, ma una APP che gira in un browser sì. E' necessario disabilitare CORS al memento del lancio del browser - testato Chrome (Versione 125.0.6422.61  - 64 bit):<br>
+   `chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`<br>
+  (vedi file `goTuyaUI.bat`). Vale solo per questa istanza, le altre resteranno protette.  
 
 - Tuya pone dei limiti alla frequenza degli accessi al cloud. _TuyaUIweb_ ne tiene conto, e la fase iniziale (quando legge tutti i dati dal Cloud) è bloccante e non brevissima. Come anche in SmartLife.
 - Per ovviare all'impossibilità di creare file direttamente da una pagina HTML, sempre per motivi di sicurezza, per l'export dei dati sono ricorso ad una libreria di logging su file [debugout.js](https://github.com/inorganik/debugout.js). Per questo motivo il controllo sui file generati non è completo e sono necessari piccoli  interventi manuali sui file esportati.
