@@ -139,3 +139,12 @@ _Questo progetto è un work-in-progress: viene fornito "così com'è", senza gar
 
 Grazie per l'interesse
 m.s.
+
+<hr>
+### Riconoscimenti
+ - https://visjs.github.io/vis-network/docs/network
+ - https://fontawesome.com/v4/icons/
+ - https://code.google.com/archive/p/crypto-js/
+ - https://github.com/inorganik/debugout.js 
+
+
