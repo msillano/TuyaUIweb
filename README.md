@@ -46,7 +46,7 @@ _DO NOT make it accessible from the outside or by third parties, otherwise, all 
 ## Installation
 1) Download and unzip the `TuyaUIweb.1.x.zip` file to a directory (with the permissions required by the operating system). 
 2) Perform the configuration operations.
-3) The main file is `tuyaui.html`. A WEB server is not required: as the code is all in JavaScript, TuyaUIweb is executed by the browser. To launch it, see the `goTuyaUI.bat` file (for Windows). For other operating systems, create a similar script.<br>
+3) The main file is `tuyaui.html`. A WEB server is not required: as the code is all in JavaScript, TuyaUIweb is executed by the browser. To launch it, see the `goTuyaUI.bat` file (for Windows, Chrome). For other operating systems, create a similar script.<br>
 note: Ignore the Chrome message: "You are using an unsupported command line flag: - disable-web-security...": unsupported but working.
 4) During installation and setup, the console is useful (in the browser - developer tools -, or menu 'inspect element') because the information and error messages of TuyaUIweb go there.
 On the left startup OK (Chrome, CORS disabled) on the right CORS error case (Opera):
