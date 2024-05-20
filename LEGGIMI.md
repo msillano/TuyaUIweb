@@ -71,7 +71,7 @@ Due aree sono state privilegiate e le rispettive funzioni poste per semplicità 
 
  - _Tuya non permette più di cambiare le icone, per una opinabile  interpretazione dei suoi consulenti legali delle attuali leggi sul copyright._  
 Per questa APP ho scelto le icone `awesome4`, con un'[ampissima scelta](https://fontawesome.com/v4/cheatsheet/) e  di libero uso. Di default tutti i device hanno la stessa icona, un cubo.<br>
-Me sono facilmente personalizzabili dall'utente: basta fornire un criterio di selezione dei device e l'indicazione dell'icona `awesome4` da usare. Come esempio, hanno icone speciali (vedi immagini):
+Ma sono facilmente personalizzabili dall'utente: basta fornire un criterio di selezione dei device e l'indicazione dell'icona `awesome4` da usare. Come esempio, hanno icone speciali (vedi immagini):
    - i Termometri (device con nome 'Temp...')
    - le Valvole termostatiche (device con nome 'Termo...')
    - i Gateway (device con 'Gateway' nel nome)
