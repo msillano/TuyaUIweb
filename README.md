@@ -15,7 +15,7 @@ In the initial phase, all necessary data is read from Tuya Cloud and a local str
 Data updates are polled: they are read from the `TuyaCloud` with a frequency that can be set by the user, from 30 seconds to a few minutes, and the popups are updated immediately.
 
 **Logging and data export.** <br>
-It is possible to export some data to a file: the user must specify `home`, `device`, and `status` (properties) to identify the data of interest and these are saved at regular intervals (minimum 1 minute) in an internal buffer (max 5000 records = 80h  @1rec/min), then automatically exported to a file or on user command.
+It is possible to export some data to a file: the user must specify `home`, `device`, and `status` (properties) to identify the data of interest and these are saved at regular intervals (minimum 1 minute) in an internal buffer (max 5000 records = 80h  @1rec/min), then exported to a file, either automatically or at user command.
 
 **Customizable look and feel.**
 The program is OpenSource, in HTML+Javascript, is fairly well documented and modular. Therefore, any intervention is possible, allowing you to adapt the program to individual needs.
@@ -30,11 +30,10 @@ The program is OpenSource, in HTML+Javascript, is fairly well documented and mod
 - In the tooltips, by default, all the properties included in the 'status' of the device are presented, with the names and values used by Tuya Cloud. Some values can be encoded.
 - The first problem is the CORS security protocol, implemented by modern browsers. An application (even in js, node-red, etc) does not have this problem, but an APP that runs in a browser does. It is necessary to disable CORS when launching the browser - tested on Chrome Version 125.0.6422.61 (64-bit):<br>
    `chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`<br>
- (see `goTuyaUI.bat` file). It applies only to this instance, the others will remain protected.
-
+ See `goTuyaUI.bat` file (for Windows + Chrome). It applies only to this instance, the others will remain protected.
 - Tuya places limits on the frequency of cloud access. **TuyaUIweb** takes this into account, and the initial phase (when it reads all the data from the Cloud) is blocking and not very short. As also in SmartLife.
-- To overcome the impossibility of creating files directly from an HTML page, again for security reasons, to export the data I used a file logging library [debugout.js](https://github.com/ inorganicik/debugout.js). For this reason, the control over the generated files is not complete, and small manual interventions are necessary.
-- The files are saved in the `download` dir, with the fixed name `tuyalog-hh-mm-ss.cvs|json`, _make sure the OS. do not overwrite files with the same name!_
+- To overcome the impossibility of creating files directly from an HTML page, again for security reasons, to export the data I used a file logging library [debugout.js](https://github.com/inorganicik/debugout.js). For this reason, the control over the generated files is not complete, and small manual interventions are necessary.
+- The files are saved in the `download` dir, with the fixed name `tuyalog-hh-mm-ss.cvs|json`._
 - Operation continues normally even with the browser window iconized.
 
 ### Safety NOTE
