@@ -59,7 +59,8 @@ On the left startup OK (Chrome, CORS disabled) on the right CORS error case (Ope
 ### Configuration
 This APP is for experienced users, therefore it is acceptable that the configuration is done directly by editing a file (`config.js`).
 
- - The INDISPENSABLE data to be entered are your own Tuya credentials (you should already have them, and for new users, there are many guides on the web. [This one](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) is one of the clearest, others are [listed here](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions).
+ - The INDISPENSABLE data to be entered are your own Tuya credentials for 'plataform.tuya' (Users of HA and other similar hubs already have them, but new users must sign up, there are many guides on the web. [This one](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) is one of the clearest, others are [listed here](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions). An advantage is that you have access to the Tuya platform, with a lot of data on your devices, and to the technical documentation.
+
  - Other options concern: timing (Cloud and log) and log configuration: the format, autosave, the required values, or the look & feel, such as the presence of pan/zoom buttons.
  - Update the `goTuyaUI.bat` launcher file with the paths of the host system.
 
