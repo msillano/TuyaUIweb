@@ -48,18 +48,20 @@ _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri da
 <hr>
 
 ### Versioni
-- 1.2  Introdotti due modi: normale | expert
-   1. Il DUMP dei dati Tuya in console è possibile solo in modo expert
-   2. In modo 'expert' sono aggiunti al tooltip 3 nuovi dati (se disponibili):
-    - `isa`:  nome del 'tipo' Tuya del device ( in codice è `device.category`). In totale circa 600 tipi.
-    - `id`:  `device.id`, richiesto da alcuni HUB
-    - `key`: `device.local_key`, richiesto da alcuni HUB 
+- 1.2  Aggiornamento funzionale.
+  - Aggiunta in 'config' la possibilità di escludere alcune 'home'
+  - Introdotti due modi: normale | expert
+    1. Il DUMP dei dati Tuya in console è possibile solo in modo expert
+    2. In modo 'expert' sono aggiunti al tooltip 3 nuovi dati (se disponibili):
+       - `isa`:  nome del 'tipo' Tuya del device ( in codice è `device.category`). In totale circa 600 tipi.
+       - `id`:  `device.id`, richiesto da alcuni HUB
+       - `key`: `device.local_key`, richiesto da alcuni HUB 
         
 - 1.1  Correzione bugs
 - 1.0  Versione iniziale
 
 ### Installazione
-1) Scaricare e dezippare il file `TuyaUIweb.1.x.zip`  in una dir (con le autorizzazioni richieste dal S.O.).
+1) Scaricare e dezippare il file `TuyaUIweb.x.x.zip`  in una dir (con le autorizzazioni richieste dal S.O.).
 2) Eseguire le operazioni di configurazione
 3) Il file principale è `tuyaui.html`.  NON è necessario un server WEB, in quanto il codice è tutto in javaScript, eseguito dal browser. Per lanciarlo vedi file `goTuyaUI.bat` (per Windows - Chrome). Per altri S.O. creare uno script analogo. (Ignorare il messaggio Chrome: "stai utilizzando una segnalazione della riga di comando non supportata: - disable-web-security...": non supportata ma funzionante). 
 4) In fase di installazione e setup è utile la console (nel browser - strumenti per programmatori -, o menu contestuale 'ispeziona') perchè lì vanno i messaggi di informazione e di errore di TuyaUIweb.<BR>
@@ -72,7 +74,8 @@ Nelle immagini: a sinistra avvio OK (Chrome, CORS disattivato) a destra caso di 
 L'app **TuyaUIweb** è per utenti non alle prime armi, pertanto è accettabile che la configurazione avvenga direttamente editando un file (`config`.js). _Le solite avvertenze: fare una copia del file prima di ogni modifica, usare un editor UTF8 (io uso Notepad-plusplus), e attenzione a NON ALTERARE niente altro (soprattutto virgole  ','  ed  apici '"')._
 
  - I dati INDISPENSABILI da inserire sono le proprie `credenziali Tuya` per 'platform.tuya'. <BR> Gli utenti di HA e altri hub simili dovrrebbero già averle, ma i nuovi utenti si devono iscrivere, ci sono molte guide nel web. [Questa](https://github.com/iRayanKhan/homebridge-tuya/wiki/Get-Local-Keys-for-your-devices) è una delle più chiare, altre sono [elencate qui](https://github.com/msillano/tuyaDAEMON/wiki/50.-Howto:-add-a-new-device-to-tuyaDAEMON#1-preconditions). Un vantaggio è che si ha accesso alla piattaforma Tuya, con molti dati sui propri device, ed alla documentazione tecnica.
- - Altre opzioni riguardano: timing (Cloud e log) e configurazione del log: il formato, l'autosave, i valori richiesti, oppure il look&feel, come la presenza dei bottoni di pan/zoom,
+ - Altre opzioni riguardano: timing (Cloud e log) e configurazione del log: il formato, l'autosave, i valori richiesti, oppure il look&feel, come la presenza dei bottoni di pan/zoom. <BR>Dalla versione 1.2 la possibilità di escludere alcune home.
+
 - Aggiornare con i path del sistema ospite il file di lancio `goTuyaUI.bat`.
 
 ## Customizzazioni
