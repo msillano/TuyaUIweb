@@ -21,7 +21,7 @@ It is possible to export some data to a file: the user must specify `home`, `dev
 This open-source program, in HTML+Javascript, is fairly well documented and modular. Therefore, any intervention is possible, allowing you to adapt the program to individual needs.
 
 **Normal and expert mode.**
-In 'expert mode' (since VER 1.2) in the tooltip of each device there is also the 'category' of the device (in plain text), the 'device_id' (device.id), and 'secret_key' (device.local_key). This information is very useful for users of TuyaDEAMON or similar HUBs like HA.<br>
+In 'expert mode' (since VER 1.2) in the tooltip of each device there is also the 'category' of the device (in plain text), the 'device_id' (device.id), and the 'secret_key' (device.local_key). This information is very useful for users of TuyaDEAMON or similar HUBs like HA.<br>
 In 'expert mode', a command is available to put the entire data structure obtained from Tuya Cloud in the console: it can be explored at each level in the console pad or copied with copy and paste in JSON format.
 
 ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/UIlook01.png?raw=true)
