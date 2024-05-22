@@ -30,7 +30,8 @@ The program is OpenSource, in HTML+Javascript, is fairly well documented and mod
 - In the tooltips, by default, all the properties included in the 'status' of the device are presented, with the names and values used by Tuya Cloud. Some values can be encoded.
 - The first problem is the CORS security protocol, implemented by modern browsers. An application (even in js, node-red, etc) does not have this problem, but an APP that runs in a browser does. It is necessary to disable CORS when launching the browser - tested on Chrome Version 125.0.6422.61 (64-bit):<br>
    `chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`<br>
- See `goTuyaUI.bat` file (for Windows + Chrome). It applies only to this instance, the others will remain protected.
+ See `goTuyaUI.bat` file (for Windows + Chrome). It applies only to this instance, the others will remain protected. >br>
+As an alternative to the 'bat' file, the 'Cross Domains - CORS' extension can be used with some browsers, see [ISSUE4](https://github.com/msillano/TuyaUIweb/issues/4)
 - Tuya places limits on the frequency of cloud access. **TuyaUIweb** takes this into account, and the initial phase (when it reads all the data from the Cloud) is blocking and not very short. As also in SmartLife.
 - To overcome the impossibility of creating files directly from an HTML page, again for security reasons, to export the data I used a file logging library [debugout.js](https://github.com/inorganicik/debugout.js). For this reason, the control over the generated files is not complete, and small manual interventions are necessary.
 - The files are saved in the `download` dir, with the fixed name `tuyalog-hh-mm-ss.cvs|json`.
@@ -41,6 +42,19 @@ The program is OpenSource, in HTML+Javascript, is fairly well documented and mod
 _**This APP is totally open, without any protection, and contains your credentials in clear text in the files!**_ <br>
 _DO NOT make it accessible from the outside or by third parties, otherwise, all your data, including Tuya credentials, are exposed!_
 <hr>
+
+### Versions
+- 1.2 Functional update.
+   - Added (in 'config') the possibility to exclude some 'homes'
+   - Two modes introduced: normal | expert
+     1. DUMPing Tuya data in the console is only possible in expert mode
+     2. In 'expert' mode, 3 new items are added to the tooltip (if available):
+        - `isa`: name of the Tuya 'type' of the device (the code is `device.category`). In total around 600 types.
+        - `id`: `device.id`, required by some HUBs
+        - `key`: `device.local_key`, required by some HUBs 
+        
+- 1.1 Bug fixes
+- 1.0 Initial release
 
 ## Installation
 1) Download and unzip the `TuyaUIweb.1.x.zip` file to a directory (with the permissions required by the operating system). 
