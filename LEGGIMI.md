@@ -19,7 +19,7 @@ Tutti i nodi (root, case, stanze e  device) sono rappresentati da icone (customi
 L'aggiornamento dei dati  avviene in polling: sono letti dal Cloud con frequenza regolabile dall'utente, da 30s a alcuni minuti, e i popup (customizzabili) sono aggiornati subito.<BR>
 Se necessario è possibile ricaricare ed aggiornare tutta la struttura, e.g. in caso di aggiunte di nuovi device.
 
-In **'expert mode'** (da VER 1.2) nel tooltip di ogni device è presente anche la categoria del device (in chiaro), il `device_id` (device.id) e `secret_key` (device.local_key).  Per gli utenti di TuyaDEAMON o di HUB similari come HA: può essere molto utile.
+In **'expert mode'** (da VER 1.2) nel tooltip di ogni device è presente anche la categoria del device (in chiaro), il `device_id` (device.id) e `secret_key` (device.local_key).  Per gli utenti di TuyaDEAMON o di HUB similari come HA queste informazioni sono molto utili.
 
 
 ![](https://github.com/msillano/TuyaUIweb/blob/main/pics/UIlook01.png?raw=true)
