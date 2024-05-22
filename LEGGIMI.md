@@ -52,8 +52,8 @@ _NON rendetela accessibile dall'esterno o da terzi, altrimenti tutti i vostri da
    1. Il DUMP dei dati Tuya in console è possibile solo in modo expert
    2. In modo 'expert' sono aggiunti al tooltip 3 nuovi dati (se disponibili):
     - `isa`:  nome del 'tipo' Tuya del device ( in codice è `device.category`). In totale circa 600 tipi.
-    - `id`:  device ID, richiesto da alcuni HUB
-    - `key`: local-key, richiesto da alcuni HUB 
+    - `id`:  `device.id`, richiesto da alcuni HUB
+    - `key`: `device.local_key`, richiesto da alcuni HUB 
         
 - 1.1  Correzione bugs
 - 1.0  Versione iniziale
